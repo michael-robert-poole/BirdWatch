@@ -19,6 +19,6 @@ def split_data(subset, label_mode,labels):
         subset=subset,
         label_mode= label_mode,
         labels=labels,
-        batch_size=4
+        batch_size=32
   )
     return dataset

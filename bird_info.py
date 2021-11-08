@@ -15,7 +15,7 @@ class Bird_info:
     def visualise_images(self, data, latin=False):
         names = self.LATIN_NAME if latin else self.COMMON_NAME
         
-        plt.figure(figsize=(30, 30))
+        plt.figure(figsize=(10, 10))
         for images, categories in data.take(1):
             for i in range(9):
                 ax = plt.subplot(3, 3, i + 1)
