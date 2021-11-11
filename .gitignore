@@ -1,0 +1,7 @@
+env/
+__pycache__/
+.ipynb_checkpoints/
+all_birds/
+val_ten_uk_birds/
+
+
