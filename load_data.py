@@ -3,9 +3,9 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
 
-DIRECTORY="all_birds"
+DIRECTORY="birds"
 IMG_SIZE=[256,256]
-VAL_SPLIT=0.2
+VAL_SPLIT=0.1
 SEED=133
    
 
@@ -18,6 +18,6 @@ def split_data(subset, label_mode,labels):
         subset=subset,
         label_mode= label_mode,
         labels=labels,
-        batch_size=32
+        batch_size=16
   )
     return dataset
