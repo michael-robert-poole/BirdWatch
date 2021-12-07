@@ -12,13 +12,15 @@ LATIN_NAME=["Columba palumbus", "Aegithalos caudatus", "Pica pica", "Carduelis c
    
 def visualise_images(images, labels, latin=False):
     names = LATIN_NAME if latin else COMMON_NAME
-    indexes=np.arange(start=0, stop=len(images)-1, step=math.ceil(len(images)/100))
+    print(len(images))
+    indexes=np.arange(start=0, stop=len(images)-2, step=math.ceil(len(images)/100))
+    print(labels[indexes[99]])
     plt.figure(figsize=(30, 30))
     j=0
     for i in indexes:
         ax = plt.subplot(10, 10, j + 1)
         plt.imshow(images[i])
-        plt.title(names[labels[i]])
+        plt.title(names[labels[i]] + str(images[i].shape))
         plt.axis('off')
         j+=1
             
