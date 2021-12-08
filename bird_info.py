@@ -14,7 +14,7 @@ def visualise_images(images, labels, latin=False):
     for i in indexes:
         ax = plt.subplot(10, 10, j + 1)
         plt.imshow(images[i])
-        plt.title(const.BIRDS_DICT[labels[i]][common_name] + str(images[i].shape))
+        plt.title(const.BIRDS_DICT[labels[i]][common_name])
         plt.axis('off')
         j+=1
             

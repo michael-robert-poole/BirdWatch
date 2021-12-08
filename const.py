@@ -11,3 +11,6 @@ BIRDS_DICT={
     9:["Aegithalos_caudatus", "Long-Tailed Tit"]
 }
 
+COMMON_NAMES=['Common Blackbird', 'House Sparrow', 'Great Tit', 'Wood Pigeon', 'European Robin', 'Eurasian Magpie', 'Eurasian Blue Tit', 'Common Starling', 'European Goldfinch', 'Long-Tailed Tit']
+
+LATIN_NAMES=['Turdus merula', 'Passer domesticus', 'Parus major', 'Columba palumbus', 'Erithacus rubecula', 'Pica_pica', 'Cyanistes caeruleus', 'Sturnus vulgaris', 'Carduelis carduelis', 'Aegithalos_caudatus']
