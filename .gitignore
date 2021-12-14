@@ -5,4 +5,5 @@ all_birds/
 val_ten_uk_birds/
 birds/
 np_arrays/
-
+data_frames/
+*.zip
