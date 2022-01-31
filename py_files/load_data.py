@@ -2,6 +2,8 @@ import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import cv2
 
 DIRECTORY="birds"
 IMG_SIZE=[256,256]
@@ -21,3 +23,21 @@ def split_data(subset, label_mode,labels):
         batch_size=16
   )
     return dataset
+
+def load_data_from_folder(parent_dir):
+    images = []
+    labels = []
+    label = 0
+
+    parent_folder = os.listdir(parent_dir)
+
+    for f in parent_folder:
+        print(f)
+        sub_folder=os.listdir(parent_dir+"/"+f)
+        for image in sub_folder:
+            theImage=cv2.imread(parent_dir+"/"+f+"/"+image, cv2.IMREAD_COLOR)
+            im_rgb = cv2.cvtColor(theImage, cv2.COLOR_BGR2RGB)
+            images.append(im_rgb)
+            labels.append(label)
+        label=label+1
+    return images, labels
