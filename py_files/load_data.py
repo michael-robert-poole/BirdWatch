@@ -30,14 +30,16 @@ def load_data_from_folder(parent_dir):
     label = 0
 
     parent_folder = os.listdir(parent_dir)
-
+    parent_folder.sort()
+    
     for f in parent_folder:
         print(f)
         sub_folder=os.listdir(parent_dir+"/"+f)
         for image in sub_folder:
             theImage=cv2.imread(parent_dir+"/"+f+"/"+image, cv2.IMREAD_COLOR)
-            im_rgb = cv2.cvtColor(theImage, cv2.COLOR_BGR2RGB)
-            images.append(im_rgb)
+            img_resize = cv2.resize(theImage, (256,256))
+            img_rgb = cv2.cvtColor(img_resize, cv2.COLOR_BGR2RGB)
+            images.append(img_rgb)
             labels.append(label)
         label=label+1
     return images, labels
