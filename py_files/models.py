@@ -64,14 +64,39 @@ def resNet_50_transfer_learning_model(INPUT_SHAPE):
             keras.layers.Dropout(0.5),
             keras.layers.Dense(124, activation="relu"),
             keras.layers.Dense(62, activation="relu"),
-            keras.layers.Dense(len(train_ds.class_names), activation="softmax"),
+            keras.layers.Dense(10, activation="softmax"),
         ]
     )(x)
     model = keras.Model(inputs, outputs)
     
     return model
 
+def VGG(INPUT_SHAPE):
+    base_model=keras.applications.VGG16(weights='imagenet', include_top = False)
+    base_model.trainable=False
+    inputs = keras.Input(shape=INPUT_SHAPE)
 
+    x = base_model(inputs, training=False)
+
+    
+    x = keras.layers.GlobalAveragePooling2D()(x)
+   
+    outputs = keras.Sequential(
+        [
+            keras.layers.Dense(1024, activation="relu"),
+            keras.layers.Dense(622, activation="relu"),
+            keras.layers.Dropout(0.5),
+            keras.layers.Dense(256, activation="relu"),
+            keras.layers.Dropout(0.5),
+            keras.layers.Dense(124, activation="relu"),
+            keras.layers.Dense(62, activation="relu"),
+            keras.layers.Dense(10, activation="softmax"),
+        ]
+    )(x)
+    model = keras.Model(inputs, outputs)
+    
+    return model
+    
  
 def alex_net():
     #Instantiation
