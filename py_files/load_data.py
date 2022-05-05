@@ -31,7 +31,7 @@ def load_data_from_folder(parent_dir):
 
     parent_folder = os.listdir(parent_dir)
     parent_folder.sort()
-    
+    print("Loading images....")
     for f in parent_folder:
         print(f)
         sub_folder=os.listdir(parent_dir+"/"+f)
